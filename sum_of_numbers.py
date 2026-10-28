@@ -6,3 +6,8 @@
 # 10/27/2026
 
 
+# PROGRAM TITLE AND DIVIDERS
+divider1 = "*******************"
+divider2 = "-------------------"
+print ("SUM OF NUMBERS", divider1)
+print()

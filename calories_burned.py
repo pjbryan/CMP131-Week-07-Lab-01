@@ -5,3 +5,8 @@
 # Assignment 07
 # 10/27/2026
 
+# PROGRAM TITLE AND DIVIDERS
+divider1 = "*******************"
+divider2 = "-------------------"
+print ("CALORIES BURNED", divider1)
+print()
