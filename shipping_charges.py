@@ -10,16 +10,40 @@
 divider1 = "*******************"
 divider2 = "-------------------"
 print ("FAST FREIGHT SHIPPING CALCULATOR", divider1)
-print()
 
-# ASK AND STORE USER INPUT
+# Ask user for package weight
 packageWeight = float(input("Enter package weight (kilograms): "))
 
-# VALIDATE PACKAGE WEIGHT
-while packageWeight <= 0 or packageWeight >20:
+# Validate package weight
+while packageWeight <= 0 or packageWeight > 20:
   print ("ERROR! Must be more than 0 and no more than 20!")
-else:
-  print ("Your package size: ", packageWeight)
-packageWeight = float(input("Enter package weight (kilograms): "))
+  packageWeight = float(input("Enter package weight (kilograms): "))
 
-# SHIPPING 
+# Ask user for shipping distance
+shippingDistance = int(input("Enter shipping distance (miles): "))
+
+# Validate shipping distance
+while shippingDistance < 10 or shippingDistance > 3000:
+  print ("ERROR! Distance must be between 10 and 3,000 miles.")
+  shippingDistance = int(input("Enter shipping distance (miles): "))
+
+# Determine shipping rate
+if packageWeight <= 2:
+  shippingRate = 1.10
+elif packageWeight <= 6:
+  shippingRate = 2.20
+elif packageWeight <= 10:
+  shippingRate = 3.70
+else:
+  shippingRate = 4.80
+
+# Calculate shipping charge
+shippingCharge = shippingRate * (shippingDistance / 500)
+
+# Summary
+print ("SUMMARY", divider2)
+print (f"Package weight: {packageWeight:.2f} kilograms.")
+print (f"Shipping distance: {shippingDistance:,} miles.")
+print (f"Shipping rate per 500 miles: ${shippingRate:.2f}")
+print (f"Total shipping charge: ${shippingCharge:,.2f}")
+
